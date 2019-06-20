@@ -1,0 +1,52 @@
+placeholder()
+  &::-webkit-input-placeholder
+    {block}
+  &::-moz-placeholder
+    {block}
+  &:-ms-input-placeholder
+    {block}
+
+text-ellipsis()
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+clearfix()
+  &:before
+  &:after
+    content ''
+    display table
+  &:after
+    clear: both
+
+$arrow-position = {
+  left: right,
+  top: bottom,
+  right: left,
+  bottom: top
+}
+
+_arrow()
+  content ''
+  position absolute
+  display inline-block
+  width 0
+  height 0
+
+arrow-before(pos = left, size = 5px, color = #000)
+  direction = $arrow-position[pos]
+  &:before
+    _arrow()
+    {block}
+    border size solid transparent
+    border-{pos}-width 0
+    border-{direction}-color color
+
+arrow-after(pos = left, size = 5px, color = #000)
+  direction = $arrow-position[pos]
+  &:after
+    _arrow()
+    {block}
+    border size solid transparent
+    border-{pos}-width 0
+    border-{direction}-color color
