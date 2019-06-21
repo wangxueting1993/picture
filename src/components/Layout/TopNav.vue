@@ -1,7 +1,10 @@
 <template>
   <div class="nav_bg">
     <div class="nav-top clearfix">
-      <div class="l">
+      <div
+        class="l"
+        @click="toHome"
+      >
         <img
           class="cont__img"
           src="../../assets/images/common/logo.png"
@@ -9,11 +12,18 @@
         >
       </div>
       <div class="nav r">
-        <span class="login">登录</span>
+        <router-link
+          class="login"
+          :to="'/login'"
+        >登录</router-link>
         <span class="tip">|</span>
-        <span class="register">注册</span>
+        <span
+          class="register"
+          @click="register"
+        >注册</span>
       </div>
     </div>
+    <div class="bottom_line">f</div>
   </div>
 </template>
 <script>
@@ -39,6 +49,12 @@ export default {
     }
   },
   methods: {
+    register() {
+      this.$router.push({ path: '/register', query: { type: 'register' } })
+    },
+    toHome() {
+      this.$router.push('/home')
+    },
     jumpRouter(router) {
       if (
         router === '/reportUp/reportUpload' ||
@@ -125,8 +141,19 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .nav_bg {
-  background #fff
+  background: #fff;
+  height: 90px;
+  position: relative;
 }
+
+.bottom_line {
+  position: absolute;
+  bottom: 10px;
+  height: 2px;
+  width: 100%;
+  background: #fafafa;
+}
+
 .nav-top {
   width: 1200px;
   margin: 0 auto;
@@ -144,6 +171,10 @@ export default {
   color: #E41F1A;
   font-size: 20px;
   cursor: pointer;
+
+  .login, .register {
+    color: #e41f1a;
+  }
 
   .tip {
     display: inline-block;

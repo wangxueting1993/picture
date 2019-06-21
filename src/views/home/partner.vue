@@ -128,7 +128,7 @@
 <style lang="stylus" scoped>
 /deep/ {
   .el-row {
-    margin-bottom 39px
+    // margin-bottom 39px
   }
   .grid-content {
     width: 267px;
@@ -137,8 +137,8 @@
     // border: 3px solid rgba(230, 230, 230, 1);
     // border-radius: 8px;
     img {
-      width: 100%;
-      height: 100%;
+      width: 70%;
+      // height: 100%;
       display: inline-block;
     }
   }
@@ -163,7 +163,7 @@
 
 .use_place {
   // background color-bg-default
-  height: 870px;
+  height: 570px;
 }
 
 .product_place {

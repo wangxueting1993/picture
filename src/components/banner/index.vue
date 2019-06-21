@@ -1,8 +1,29 @@
 <template lang="html">
-  <div class="gridmark_banners" id="gridmark_banner">
-  </div>
-  <!-- <el-carousel :interval="2000" arrow="always" class="gridmark_banners"  :height="bannerHeight + 'px'"> -->
-
+  <!-- <div class="gridmark_banner" id="gridmark_banner">
+  </div> -->
+  <el-carousel :interval="5000" arrow="always" class="gridmark_banners"  :height="bannerHeight + 'px'">
+    <el-carousel-item>
+      <img
+        class="info__jiaotong"
+        src="../../assets/images/common/banner.png"
+        alt=""
+      >
+    </el-carousel-item>
+    <el-carousel-item>
+      <img
+        class="info__jiaotong"
+        src="../../assets/images/common/banner2.jpeg"
+        alt=""
+      >
+    </el-carousel-item>
+    <el-carousel-item>
+      <img
+        class="info__jiaotong"
+        src="../../assets/images/common/banner3.png"
+        alt=""
+      >
+    </el-carousel-item>
+  </el-carousel>
 </template>
 
 <script>
@@ -35,18 +56,18 @@ export default {
 <style lang="stylus">
 .gridmark_banners {
   width: 100%;
-  height: 974px;
+  height: 673px;
   background-color: color-bg-default;
 }
 
 .el-carousel__container {
-  height: 456px;
+  height: 673px;
 }
 
 .info__jiaotong {
   width: 100%;
   height: inherit;
-  min-height: 456px;
+  min-height: 673px;
   min-width: 1400px;
 }
 </style>

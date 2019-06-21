@@ -85,7 +85,7 @@ export default {
   },
 
   beforeDestroy() {
-    removeClass(document.body, 'login--bg')
+    // removeClass(document.body, 'login--bg')
   }
 }
 </script>

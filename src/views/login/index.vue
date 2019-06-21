@@ -1,5 +1,5 @@
 <template>
-  <login-layout :title=" active === 'login' ? '用户登录' : active === 'reset'? '重置密码': '找回密码' ">
+  <login-layout :title=" active === 'login' ? '用户登录' : active === 'register'? '用户注册': '找回密码' ">
     <Login
       v-show="active === 'login'"
       @redirectToModule="active = $event"
@@ -41,9 +41,9 @@ export default {
 
   methods: {},
   created () {
-    console.log('type', getUrlKey('type'))
-    if (getUrlKey('type') === 'reset') {
-      this.active = 'reset'
+    console.log(this.$route.path)
+    if (getUrlKey('type') === 'register') {
+      this.active = 'register'
     } else {
       this.active = 'login'
     }

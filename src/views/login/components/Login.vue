@@ -1,57 +1,66 @@
 <template>
   <div class="loginPan">
-    <div class="code">
-      <img
-        class="product__img"
-        src="../../..//assets/images/common/code.png"
-        alt=""
-      >
+    <div v-if="showCode">
+      <div class="codeImg">
+        <img
+          class="product__img"
+          src="../../..//assets/images/common/code.jpeg"
+          alt=""
+          @click="codeHide"
+        ></div>
+      <div
+        class="backLogin"
+        @click="backLogin"
+      >返回</div>
     </div>
-    <el-form
-      :model="params"
-      class="login__form"
-    >
-      <el-form-item>
-        <el-input
-          v-model="params.username"
-          placeholder="请输入手机号"
-          class="border--hidden"
-          @keypress.native.enter="submit()"
-        />
-      </el-form-item>
-      <el-form-item>
-        <div>
+    <div v-else>
+      <!-- showCode -->
+      <div class="code">
+        <img
+          class="product__img"
+          src="../../..//assets/images/common/code.png"
+          alt=""
+          @click="codeHide"
+        >
+      </div>
+      <el-form
+        :model="params"
+        class="login__form"
+      >
+        <el-form-item>
           <el-input
-            class="yzCode"
-            v-model="params.code"
-            placeholder="请输入验证码"
+            v-model="params.username"
+            placeholder="请输入手机号"
+            class="border--hidden"
             @keypress.native.enter="submit()"
           />
-          <span class="getcode">获取验证码</span>
-        </div>
-
-      </el-form-item>
-      <el-form-item>
-        <el-input
-          v-model="params.password"
-          type="password"
-          placeholder="密码"
-          @keypress.native.enter="submit()"
-        />
-      </el-form-item>
-      <el-form-item
-        label-width="0"
-        class="login__form-footer"
-      >
-        <el-button
-          type="primary"
-          size="large"
-          class="login__submit"
-          :loading="loading"
-          @click.stop="submit()"
-        >登录</el-button>
-      </el-form-item>
-    </el-form>
+        </el-form-item>
+        <el-form-item>
+          <el-input
+            v-model="params.password"
+            type="password"
+            placeholder="密码"
+            @keypress.native.enter="submit()"
+          />
+        </el-form-item>
+        <el-form-item
+          label-width="0"
+          class="login__form-footer"
+        >
+          <el-button
+            type="primary"
+            size="large"
+            class="login__submit"
+            :loading="loading"
+            @click.stop="submit()"
+          >登录</el-button>
+        </el-form-item>
+      </el-form>
+      <div
+        @click="redirectToModule"
+        class=" forgetPwd"
+        >忘记密码</div>
+    </div>
   </div>
 
 </template>
@@ -89,6 +98,7 @@ export default {
         password: '',
         code: ''
       },
+      showCode: false,
       rules: {
         username: [
           {
@@ -113,6 +123,12 @@ export default {
   },
 
   methods: {
+    backLogin() {
+      this.showCode = false
+    },
+    codeHide() {
+      this.showCode = true
+    },
     redirectToModule() {
       console.log('tag')
       this.$emit('redirectToModule', 'forgot')
@@ -165,9 +181,15 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.forgetPwd {
+  text-align right 
+  color #e41f1a
+  cursor pointer
+
+}
 .loginPan {
   position: relative;
-
+  height 250px
   .code {
     position: absolute;
     top: -79px;
@@ -185,10 +207,27 @@ export default {
   color: #8e96a5;
 }
 
+.backLogin {
+  text-align: right;
+  color: #ff4d4e;
+  margin 20px 80px
+}
+
 .yzCode {
   width: 250px;
   float: left;
   overflow: hidden;
+}
+
+.codeImg {
+  width: 360px;
+  // height: 222px;
+  margin-bottom: 15px;
+  img {
+    width 200px
+    height 200px
+  }
+
 }
 
 .getcode {

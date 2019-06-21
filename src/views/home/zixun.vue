@@ -21,7 +21,19 @@
           </div>
         </el-col>
         <el-col :span="6">
-          <div class="grid-content bg-purple-light">d</div>
+          <div class="grid-content bg-purple-light fontPanle_red">
+            <div class="fontPanle">
+              <div class="year">2019</div>
+              <div class="date">06-18</div>
+              <div class="content">
+                <span class="line">—</span>
+                <span class="line_cont">采用数字指纹、AI识别等技术，让数字内容关联数字基因，实现数字内容流转后的追溯确权</span>
+              </div>
+              <div class="jiantou">
+                →
+              </div>
+            </div>
+          </div>
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple"> <img
@@ -31,12 +43,35 @@
             ></div>
         </el-col>
         <el-col :span="6">
-          <div class="grid-content bg-purple-light">d</div>
+          <div class="grid-content bg-purple-light grid-grey">
+            <div class="fontPanle">
+              <div class="year">2019</div>
+              <div class="date">10-13</div>
+              <div class="content">
+                <span class="line">—</span>
+                <span class="line_cont">采用数字指纹、AI识别等技术，让数字内容关联数字基因，实现数字内容流转后的追溯确权</span>
+              </div>
+              <div class="jiantou">
+                →
+              </div>
+            </div>
+          </div>
         </el-col>
       </el-row>
       <el-row>
         <el-col :span="6">
-          <div class="grid-content bg-purple">
+          <div class="grid-content bg-purple grid-grey">
+            <div class="fontPanle">
+              <div class="year">2019</div>
+              <div class="date">12-08</div>
+              <div class="content">
+                <span class="line">—</span>
+                <span class="line_cont">采用数字指纹、AI识别等技术，让数字内容关联数字基因，实现数字内容流转后的追溯确权</span>
+              </div>
+              <div class="jiantou">
+                →
+              </div>
+            </div>
           </div>
         </el-col>
         <el-col :span="6">
@@ -49,7 +84,19 @@
           </div>
         </el-col>
         <el-col :span="6">
-          <div class="grid-content bg-purple">d</div>
+          <div class="grid-content bg-purple grid-grey">
+            <div class="fontPanle">
+              <div class="year">2019</div>
+              <div class="date">08-10</div>
+              <div class="content">
+                <span class="line">—</span>
+                <span class="line_cont">采用数字指纹、AI识别等技术，让数字内容关联数字基因，实现数字内容流转后的追溯确权</span>
+              </div>
+              <div class="jiantou">
+                →
+              </div>
+            </div>
+          </div>
         </el-col>
         <el-col :span="6">
           <div class="grid-content bg-purple-light">
@@ -62,7 +109,7 @@
         </el-col>
       </el-row>
     </div>
-    
+
   </div>
 </template>
 <style lang="stylus" scoped>
@@ -70,13 +117,56 @@
   .grid-content {
     width: 300px;
     height: 250px;
-    background: #f00;
+    background: #E41F1A;
 
     img {
       width: 100%;
       height: 100%;
       display: inline-block;
     }
+  }
+
+  .grid-grey {
+    background: #EEEEEE;
+  }
+}
+
+.fontPanle_red {
+  color: #fff;
+}
+
+.fontPanle {
+  text-align: left;
+  padding-top: 80px;
+  padding-left: 33px;
+
+  .year {
+    font-size: 10px;
+  }
+
+  .date {
+    margin-top: 4px;
+    font-size: 20px;
+  }
+
+  .content {
+    span {
+      display: inline-block;
+    }
+
+    .line {
+      vertical-align: 32px;
+    }
+
+    .line_cont {
+      width: 206px;
+      font-size: 12px;
+      padding-left: 4px;
+    }
+  }
+
+  .jiantou {
+    margin: 15px 0 0 22px;
   }
 }
 

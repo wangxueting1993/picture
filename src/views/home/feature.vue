@@ -3,7 +3,7 @@
     <div class="gridmark_main product_place product">
       <div class="product__title">
         <div>
-          FEATURES/ 功能特点
+          FEATURES/ 产品功能
         </div>
         <div class="activeLine">
           <div>
@@ -209,8 +209,6 @@
 
 .product {
   padding-top: 0;
-  // line-height: 60px;
-  // color: color-hover;
   height: 550px;
 
   &__title {
@@ -251,6 +249,7 @@
   &__main {
     display: block;
     height: 450px;
+    margin-left 90px
   }
 
   &__tip {

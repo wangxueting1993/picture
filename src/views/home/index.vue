@@ -15,6 +15,34 @@ import homeBanner from 'components/banner'
 import featurePan from './feature'
 import zixun from './zixun'
 import partner from './partner'
+export function hasClass (el, className) {
+  if (el.classList) return el.classList.contains(className)
+  return el.className.split(/\s+/).includes(className)
+}
+
+const trim = function (string) {
+  return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '')
+}
+
+export function removeClass (el, cls) {
+  if (!el || !cls) return
+  var classes = cls.split(' ')
+  var curClass = ' ' + el.className + ' '
+
+  for (var i = 0, j = classes.length; i < j; i++) {
+    var clsName = classes[i]
+    if (!clsName) continue
+
+    if (el.classList) {
+      el.classList.remove(clsName)
+    } else if (hasClass(el, clsName)) {
+      curClass = curClass.replace(' ' + clsName + ' ', ' ')
+    }
+  }
+  if (!el.classList) {
+    el.className = trim(curClass)
+  }
+}
 export default {
   name: 'home',
   components: {
@@ -22,6 +50,9 @@ export default {
     featurePan,
     zixun,
     partner
+  },
+  created () {
+    removeClass(document.body, 'login--bg')
   }
 }
 </script>
