@@ -1,4 +1,4 @@
-# gridmark
+# picture
 
 ## Project setup
 ```
