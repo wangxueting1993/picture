@@ -205,6 +205,7 @@ export default {
 }
 
 .yzCode {
+  cursor: pointer;
   width: 250px;
   float: left;
   overflow: hidden;
@@ -253,6 +254,7 @@ export default {
 }
 
 .getcode {
+  cursor: pointer;
   display: inline-block;
   width: 100px;
   background: #FF4D4E;

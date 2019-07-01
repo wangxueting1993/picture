@@ -231,6 +231,7 @@ export default {
 }
 
 .getcode {
+  cursor: pointer;
   display: inline-block;
   width: 100px;
   background: #FF4D4E;
